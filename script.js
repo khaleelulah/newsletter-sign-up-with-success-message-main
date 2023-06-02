@@ -5,7 +5,7 @@
     let emailDisplay = document.querySelector(".email-display")
     let successPage = document.querySelector(".success")
     let mainPage = document.querySelector("main")
-
+    let dismissmsg = document.querySelector(".successbtn")
     let form = document.querySelector('form')
 
     function showError(input, message) {
@@ -32,7 +32,7 @@
             showSuccess(email)
             successPage.style.display = "flex";
             mainPage.style.display = "none";
-            emailDisplay.innerText = input.value;
+            emailDisplay.innerText = email.value;
             // inputControl.classList.add("errordisplay");
         }
 
@@ -43,3 +43,7 @@
         return re.test(email);
 
     }
+
+    dismissmsg.addEventListener("click", () => {
+        window.location.reload();
+    })
